@@ -1,0 +1,32 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Static Files
+        uses: renzholy/blogit@v0.1.7
+        with:
+          title: cooking
+          index: /readme
+          cname: cooking.verneri.org
+          header: About,/about
+          footer: GitHub,https://github.com/kinnounko
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: main
+          build_dir: out
+          fqdn: cooking.verneri.org
+          jekyll: false
+        env:
+          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
