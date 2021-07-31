@@ -1,1 +1,2 @@
-[Example Recipe](example.md)
+### pastries
+[(chocolate chip) cookies](/pastries/cookies.md)
