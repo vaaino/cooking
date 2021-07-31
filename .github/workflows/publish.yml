@@ -13,7 +13,7 @@ jobs:
         uses: renzholy/blogit@v0.1.7
         with:
           title: cooking
-          index: /readme
+          index: /index
           cname: cooking.verneri.org
           header: about,/about
           footer: GitHub,https://github.com/kinnounko

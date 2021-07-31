@@ -1,0 +1,1 @@
+[Example Recipe](example.md)
