@@ -15,7 +15,7 @@ jobs:
           title: cooking
           index: /readme
           cname: cooking.verneri.org
-          header: About,/about
+          header: about,/about
           footer: GitHub,https://github.com/kinnounko
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,7 +24,7 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          target_branch: main
+          target_branch: gh-pages
           build_dir: out
           fqdn: cooking.verneri.org
           jekyll: false
